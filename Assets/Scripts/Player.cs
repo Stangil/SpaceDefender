@@ -7,11 +7,14 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 15.0f;
     [SerializeField] float projectileSpeed = 30.0f;
-
+    [SerializeField] float projectileFiringPeriod = .2f;
     [SerializeField] float playerLimitMax = 0.95f;
     [SerializeField] float playerLimitMin = 0.05f;
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float laserOffset = 0.8f;
+
+    Coroutine firingCoroutine;
+
     float xMin;
     float xMax;
     float yMin;
@@ -30,8 +33,21 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            firingCoroutine = StartCoroutine(FireContinuously());
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(firingCoroutine);
+        }
+    }
+
+    private IEnumerator FireContinuously()
+    {
+        while (true)
+        {
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
 
@@ -44,6 +60,17 @@ public class Player : MonoBehaviour
         var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
         transform.position = new Vector2(newXPos, newYPos);
     }
+    private void Death()
+    {
+        StartCoroutine(KillPlayer());
+    }
+
+    private IEnumerator KillPlayer()
+    {
+        //Death ANimation
+        yield return new WaitForSeconds(3);
+    }
+
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
