@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8457007843403240535}
   - component: {fileID: 3942973349462717092}
   - component: {fileID: -5766848987572049844}
+  - component: {fileID: 3918746254656843962}
   m_Layer: 0
   m_Name: laserBluePlayer
   m_TagString: Untagged
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.37}
   m_EdgeRadius: 0
+--- !u!114 &3918746254656843962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816696361022476128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938f45f705ab32a4b9f62f98b5a5b540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
