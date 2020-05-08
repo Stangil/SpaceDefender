@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5763798611490392076}
   - component: {fileID: 5763798611490392067}
   - component: {fileID: 5763798611490392077}
-  m_Layer: 0
+  - component: {fileID: 730918844}
+  - component: {fileID: 1640801838466209124}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,10 +97,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  projectileSpeed: 30
-  projectileFiringPeriod: 0.15
   playerLimitMax: 0.95
   playerLimitMin: 0.05
+  health: 500
+  projectileSpeed: 30
+  projectileFiringPeriod: 0.15
   laserPrefab: {fileID: 1816696361022476128, guid: 4802685f45fa4a64e9bc16a5d0fadf1a,
     type: 3}
-  laserOffset: 0.8
+--- !u!60 &730918844
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763798611490392066}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.99, y: 0.75}
+    newSize: {x: 0.99, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.45462877, y: 0.03668785}
+      - {x: 0.35826555, y: -0.026206493}
+      - {x: 0.1199536, y: 0.11388636}
+      - {x: 0.06435044, y: 0.3674302}
+      - {x: -0.06462879, y: 0.3674307}
+      - {x: -0.12229122, y: 0.087152004}
+      - {x: -0.36088157, y: -0.008172989}
+      - {x: -0.482384, y: 0.062198162}
+      - {x: -0.46724477, y: -0.23490715}
+      - {x: -0.4098608, y: -0.20930386}
+      - {x: -0.117244825, y: -0.25715208}
+      - {x: -0.0709283, y: -0.3599553}
+      - {x: 0.074721575, y: -0.36995363}
+      - {x: 0.14145605, y: -0.26986027}
+      - {x: 0.34650245, y: -0.22462893}
+      - {x: 0.40819618, y: -0.19369125}
+      - {x: 0.43696645, y: -0.1994896}
+--- !u!114 &1640801838466209124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763798611490392066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938f45f705ab32a4b9f62f98b5a5b540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 200

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3942973349462717092}
   - component: {fileID: -5766848987572049844}
   - component: {fileID: 3918746254656843962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: laserBluePlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

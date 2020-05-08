@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] float moveSpeed = 15.0f;
-    [SerializeField] float projectileSpeed = 30.0f;
-    [SerializeField] float projectileFiringPeriod = .2f;
     [SerializeField] float playerLimitMax = 0.95f;
     [SerializeField] float playerLimitMin = 0.05f;
+    [SerializeField] int health= 500;
+    [Header("Projectile")]
+    [SerializeField] float projectileSpeed = 30.0f;
+    [SerializeField] float projectileFiringPeriod = .2f;
     [SerializeField] GameObject laserPrefab;
-    [SerializeField] float laserOffset = 0.8f;
+   // [SerializeField] float laserOffset = 0.8f;
 
     Coroutine firingCoroutine;
 
@@ -59,6 +62,28 @@ public class Player : MonoBehaviour
         var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
         var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
         transform.position = new Vector2(newXPos, newYPos);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        if (collision.tag == "Enemy")
+        {
+            DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
+            if (!damageDealer)
+            {
+                return;
+            }
+            ProcessHit(damageDealer);
+        }
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void Death()
     {
