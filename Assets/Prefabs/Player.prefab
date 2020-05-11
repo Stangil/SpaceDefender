@@ -104,6 +104,13 @@ MonoBehaviour:
   projectileFiringPeriod: 0.15
   laserPrefab: {fileID: 1816696361022476128, guid: 4802685f45fa4a64e9bc16a5d0fadf1a,
     type: 3}
+  explosionParticles: {fileID: 1398776802179961821, guid: e18aa2444cc5562488230a2186e1a8b8,
+    type: 3}
+  durationOfExplosion: 1
+  playerDeathSound: {fileID: 8300000, guid: 9f7240ea3459abe4f93639cb6fe88fa2, type: 3}
+  deathSoundVolume: 0.7
+  playerFireSound: {fileID: 8300000, guid: 7359bbc465b8d8448b97597ddd7c8ef3, type: 3}
+  fireSoundVolume: 0.7
 --- !u!60 &730918844
 PolygonCollider2D:
   m_ObjectHideFlags: 0

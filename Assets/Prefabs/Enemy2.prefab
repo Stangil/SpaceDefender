@@ -117,6 +117,13 @@ MonoBehaviour:
   enemyLaserPrefab: {fileID: 725268974245550089, guid: 9f6c589ef37526f47b3cde32097db040,
     type: 3}
   projectileSpeed: 20
+  explosionParticles: {fileID: 1398776802179961821, guid: e18aa2444cc5562488230a2186e1a8b8,
+    type: 3}
+  durationOfExplosion: 1
+  enemyDeathSound: {fileID: 8300000, guid: 9f7240ea3459abe4f93639cb6fe88fa2, type: 3}
+  deathSoundVolume: 0.7
+  enemyFireSound: {fileID: 8300000, guid: c746adbfc73f9e94e9a3f1b15a65f1b8, type: 3}
+  fireSoundVolume: 0.7
 --- !u!50 &6748807177320417497
 Rigidbody2D:
   serializedVersion: 4
