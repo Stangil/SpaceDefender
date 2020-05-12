@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1640801838466209124}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   playerLimitMax: 0.95
   playerLimitMin: 0.05
   health: 500
+  waitForDeath: 3
   projectileSpeed: 30
   projectileFiringPeriod: 0.15
   laserPrefab: {fileID: 1816696361022476128, guid: 4802685f45fa4a64e9bc16a5d0fadf1a,

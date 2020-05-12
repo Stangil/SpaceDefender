@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Player : MonoBehaviour
 {
     [Header("Player")]
@@ -10,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] float playerLimitMax = 0.95f;
     [SerializeField] float playerLimitMin = 0.05f;
     [SerializeField] int health= 500;
+    [SerializeField] float waitForDeath = 3f;
     [Header("Projectile")]
     [SerializeField] float projectileSpeed = 30.0f;
     [SerializeField] float projectileFiringPeriod = .2f;
@@ -101,9 +101,10 @@ public class Player : MonoBehaviour
         GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, durationOfExplosion);
         AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, deathSoundVolume);
-        Destroy(gameObject);
+        
+        Destroy(gameObject, waitForDeath);
+       
     }
-
 
 
     private void SetUpMoveBoundaries()

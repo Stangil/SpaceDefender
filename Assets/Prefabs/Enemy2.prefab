@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 792532378349570918}
   - component: {fileID: 964538607810872515}
   - component: {fileID: -3018349901737159886}
-  - component: {fileID: 6748807177320417497}
   - component: {fileID: 772602725736398596}
   - component: {fileID: 4054406096540392634}
   m_Layer: 9
@@ -124,27 +123,6 @@ MonoBehaviour:
   deathSoundVolume: 0.7
   enemyFireSound: {fileID: 8300000, guid: c746adbfc73f9e94e9a3f1b15a65f1b8, type: 3}
   fireSoundVolume: 0.7
---- !u!50 &6748807177320417497
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3057569403515061595}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &772602725736398596
 PolygonCollider2D:
   m_ObjectHideFlags: 0
