@@ -7,7 +7,8 @@ public class Level : MonoBehaviour
 {
     public void LoadGameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        Debug.Log("LoadGameOver");
+        SceneManager.LoadScene(2);
     }
     public void LoadGameScene()
     {

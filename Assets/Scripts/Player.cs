@@ -75,35 +75,37 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     { 
-        if (collision.tag == "Enemy")
-        {
+        
             DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
             if (!damageDealer)
             {
                 return;
             }
             ProcessHit(damageDealer);
-        }
+       
     }
 
     private void ProcessHit(DamageDealer damageDealer)
     {
+        Debug.Log("Player Should Be Hit");
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (health <= 0)
         {
+            Debug.Log("Player Should Die");
             Death();
         }
     }
 
     private void Death()
     {
-        GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
-        Destroy(explosion, durationOfExplosion);
-        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, deathSoundVolume);
+        Debug.Log("Player Death");
+        //FindObjectOfType<Level>().LoadStartMenu();
+        //Destroy(gameObject);
+        //GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
+        //Destroy(explosion, durationOfExplosion);
+        //AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, deathSoundVolume);
         
-        Destroy(gameObject, waitForDeath);
-       
     }
 
 

@@ -179,7 +179,7 @@ PrefabInstance:
     - target: {fileID: 3157254701316885930, guid: 9c0fb84b78c9d34449e8fa5a0441c8cc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7065384462244108455, guid: 9c0fb84b78c9d34449e8fa5a0441c8cc,
         type: 3}
@@ -253,7 +253,7 @@ PrefabInstance:
     - target: {fileID: 3157254701316885930, guid: eb739de0ddcbbd0468768fb336481845,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7065384462244108455, guid: eb739de0ddcbbd0468768fb336481845,
         type: 3}
@@ -393,6 +393,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 367311244}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1345716464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5763798611490392066, guid: c014da52894323a41b529cc74524c9b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5763798611400237988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1345716467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345716464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc190da0a919ec43baa2ed2f49cbbd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
+  playerLimitMax: 0.95
+  playerLimitMin: 0.05
+  health: 500
+  waitForDeath: 3
+  projectileSpeed: 30
+  projectileFiringPeriod: 0.2
+  laserPrefab: {fileID: 1816696361022476128, guid: 4802685f45fa4a64e9bc16a5d0fadf1a,
+    type: 3}
+  explosionParticles: {fileID: 1398776802179961821, guid: e18aa2444cc5562488230a2186e1a8b8,
+    type: 3}
+  durationOfExplosion: 1
+  playerDeathSound: {fileID: 8300000, guid: 9f7240ea3459abe4f93639cb6fe88fa2, type: 3}
+  deathSoundVolume: 0.7
+  playerFireSound: {fileID: 8300000, guid: c746adbfc73f9e94e9a3f1b15a65f1b8, type: 3}
+  fireSoundVolume: 0.7
 --- !u!4 &1411164087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7065384462244108455, guid: 9c0fb84b78c9d34449e8fa5a0441c8cc,
@@ -564,7 +598,7 @@ PrefabInstance:
     - target: {fileID: 3068735802130168954, guid: 9f2e7be675e367b44996a568a3243a2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7155037988778338679, guid: 9f2e7be675e367b44996a568a3243a2d,
         type: 3}
@@ -892,6 +926,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5763798611490392066, guid: c014da52894323a41b529cc74524c9b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5763798611490392076, guid: c014da52894323a41b529cc74524c9b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -947,7 +986,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5763798611490392077, guid: c014da52894323a41b529cc74524c9b5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c014da52894323a41b529cc74524c9b5, type: 3}
 --- !u!1001 &5984576860540430861
 PrefabInstance:
