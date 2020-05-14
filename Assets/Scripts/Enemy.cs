@@ -41,7 +41,6 @@ public class Enemy : MonoBehaviour
         GameObject laser = Instantiate(enemyLaserPrefab, transform.position, Quaternion.identity) as GameObject;
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
         AudioSource.PlayClipAtPoint(enemyFireSound, Camera.main.transform.position, fireSoundVolume);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,7 +65,7 @@ public class Enemy : MonoBehaviour
 
     private void EnemyDeath()
     {
-        GameObject explosion =  Instantiate(explosionParticles, transform.position, Quaternion.identity)as GameObject;
+        GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, durationOfExplosion);
         AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, deathSoundVolume);
         Destroy(gameObject);

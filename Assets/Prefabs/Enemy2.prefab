@@ -123,7 +123,7 @@ MonoBehaviour:
   enemyDeathSound: {fileID: 8300000, guid: 9f7240ea3459abe4f93639cb6fe88fa2, type: 3}
   deathSoundVolume: 0.7
   enemyFireSound: {fileID: 8300000, guid: c746adbfc73f9e94e9a3f1b15a65f1b8, type: 3}
-  fireSoundVolume: 0.7
+  fireSoundVolume: 0.34
 --- !u!60 &772602725736398596
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938f45f705ab32a4b9f62f98b5a5b540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 500
 --- !u!50 &-6365259457803682424
 Rigidbody2D:
   serializedVersion: 4

@@ -87,25 +87,22 @@ public class Player : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)
     {
-        Debug.Log("Player Should Be Hit");
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (health <= 0)
         {
-            Debug.Log("Player Should Die");
+            Debug.Log("DEATH");
             Death();
         }
     }
 
     private void Death()
     {
-        Debug.Log("Player Death");
-        //FindObjectOfType<Level>().LoadStartMenu();
-        //Destroy(gameObject);
-        //GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
-        //Destroy(explosion, durationOfExplosion);
-        //AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, deathSoundVolume);
-        
+        FindObjectOfType<Level>().LoadGameOver();
+        Destroy(gameObject);
+        GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
+        Destroy(explosion, durationOfExplosion);
+        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, deathSoundVolume);
     }
 
 
