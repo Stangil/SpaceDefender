@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     [Header("Effects")]
     [SerializeField] GameObject explosionParticles;
     [SerializeField] float durationOfExplosion = 1.0f;
-
     [SerializeField] AudioClip playerDeathSound;
     [SerializeField] [Range(0, 1)] float deathSoundVolume = 0.7f;
     [SerializeField] AudioClip playerFireSound;

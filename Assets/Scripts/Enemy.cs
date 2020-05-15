@@ -2,7 +2,10 @@
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Setup")]
     [SerializeField] float health = 100;
+    [SerializeField] int scoreValue = 100;
+    [Header("Shooting")]
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = .2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
@@ -65,6 +68,7 @@ public class Enemy : MonoBehaviour
 
     private void EnemyDeath()
     {
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         GameObject explosion = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, durationOfExplosion);
         AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, deathSoundVolume);
