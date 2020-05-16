@@ -63,6 +63,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    public int GetPlayerHealth()
+    {
+        return health;
+    }
     private void Move()
     {
         var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
@@ -88,9 +92,9 @@ public class Player : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
+        FindObjectOfType<GameSession>().SetHealth(health);
         if (health <= 0)
         {
-            Debug.Log("DEATH");
             Death();
         }
     }
@@ -103,7 +107,6 @@ public class Player : MonoBehaviour
         Destroy(explosion, durationOfExplosion);
         AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, deathSoundVolume);
     }
-
 
     private void SetUpMoveBoundaries()
     {

@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class GameSession : MonoBehaviour
 {
     int score = 0;
-
+    int playerHealth;
     private void Awake()
     {
         SetUpSingleTon();
     }
-     private void SetUpSingleTon()
+    private void Start()
+    {
+        playerHealth = FindObjectOfType<Player>().GetPlayerHealth();
+    }
+    private void SetUpSingleTon()
     {
         int numberGameSessions = FindObjectsOfType<GameSession>().Length;
         if(numberGameSessions > 1)
@@ -26,6 +30,21 @@ public class GameSession : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+    public int GetPlayerHealth()
+    {
+        if (playerHealth > 0) 
+        {
+            return playerHealth;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    public void SetHealth(int health)
+    {
+        playerHealth = health;
     }
     public void AddToScore(int scoreValue)
     {
